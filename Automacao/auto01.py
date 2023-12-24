@@ -5,7 +5,7 @@ import subprocess
 from time import sleep
 import tkinter as tk
 from tkinter import messagebox
-
+from tkinter.filedialog import askdirectory
 # Testando comandos no sistema
 # os.environ
 os.getcwd()
@@ -21,10 +21,12 @@ os.rmdir("teste")
 # Criando interfaces com o tkinter
 
 def funcao1():
-    resultado = ""
-    for i in range(1, 6):  # Exemplo de um loop de 1 a 5
-        resultado += f"Resultado {i}: {i * 2}\n"  # Exemplo de cálculo simples
-    resultado_label.config(text=resultado)
+    origem = askdirectory(title="Pasta Origem")
+    print(origem)
+    # resultado = ""
+    # for i in range(1, 6):  # Exemplo de um loop de 1 a 5
+    #     resultado += f"Resultado {i}: {i * 2}\n"  # Exemplo de cálculo simples
+    resultado_label.config(text=origem)
 
 def funcao2():
     numero = 16  # Exemplo de número para calcular a raiz quadrada
@@ -50,7 +52,7 @@ janela.config(menu=barra_menu)
 # Criar um menu "Arquivo" com duas opções
 menu_arquivo = tk.Menu(barra_menu, tearoff=0)
 barra_menu.add_cascade(label="Arquivo", menu=menu_arquivo)
-menu_arquivo.add_command(label="Função 1", command=funcao1)
+menu_arquivo.add_command(label="Escolha a pasta ", command=funcao1)
 menu_arquivo.add_command(label="Função 2", command=funcao2)
 menu_arquivo.add_separator()
 menu_arquivo.add_command(label="Sair", command=janela.quit)
