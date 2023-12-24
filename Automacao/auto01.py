@@ -23,10 +23,11 @@ os.rmdir("teste")
 def funcao1():
     origem = askdirectory(title="Pasta Origem")
     print(origem)
-    # resultado = ""
-    # for i in range(1, 6):  # Exemplo de um loop de 1 a 5
-    #     resultado += f"Resultado {i}: {i * 2}\n"  # Exemplo de cálculo simples
-    resultado_label.config(text=origem)
+    arquivos=os.listdir(origem)
+    resultado = f" Os arquivos do diretório {origem} são:\n\n"
+    for i in arquivos:  # Lista Diretorio
+        resultado += f"{i} \n"  # Exemplo de cálculo simples
+    resultado_label.config(text=resultado)
 
 def funcao2():
     numero = 16  # Exemplo de número para calcular a raiz quadrada
