@@ -40,7 +40,7 @@ def funcao2():
     # resultado=numero*2
     resultado_label.config(text=sistemOp)
 def mostrar_sobre():
-    messagebox.showinfo("Sobre", "Este é um exemplo de aplicação com Tkinter.")
+    messagebox.showinfo("Sobre", "Vianna Security")
 
 
 janela = tk.Tk()
