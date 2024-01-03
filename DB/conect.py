@@ -1,9 +1,10 @@
 import fdb
+from tkinter.filedialog import askdirectory
 # import pandas as pd
 
 # Substitua os valores com as configurações do seu banco de dados
 host= 'localhost'
-database_path=r'C:\\Otica\\Arquivos\\Otica.gdb'
+database_path=askdirectory(title="Pasta Origem")
 user='SYSDBA'
 password='masterkey'
 

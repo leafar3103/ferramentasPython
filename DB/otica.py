@@ -1,7 +1,8 @@
 import pandas as pd
+from tkinter.filedialog import askdirectory
 
 # Substitua 'seu_arquivo.xlsx' pelo caminho do seu arquivo Excel
-caminho_arquivo = r'c:\\Otica\\Clientes-otica.xlsx'
+caminho_arquivo = askdirectory(title="Pasta Origem")
 
 # Carregar o arquivo Excel para um DataFrame do Pandas
 dados = pd.read_excel(caminho_arquivo)

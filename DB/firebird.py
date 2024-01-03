@@ -1,10 +1,11 @@
 import fdb
+from tkinter.filedialog import askdirectory
 
 # Use barras invertidas duplas
-database_path = r'C:\Otica\Arquivos\Otica.gdb'
+database_path = askdirectory(title="Pasta Origem")
 
 # OU use uma barra invertida crua
-# database_path = r'C:\Otica\Arquivos\Otica.gdb'
+# database_path = askdirectory(title="Pasta Origem")
 
 # Restante do código...
 try:
