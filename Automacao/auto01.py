@@ -39,6 +39,10 @@ def funcao2():
     sleep(5)
     # resultado=numero*2
     resultado_label.config(text=sistemOp)
+def funcao3():
+    
+    resultado=print("Ping Swep")
+    resultado_label.config(text=resultado)
 def mostrar_sobre():
     messagebox.showinfo("Sobre", "Vianna Security")
 
@@ -52,7 +56,10 @@ barra_menu = tk.Menu(janela)
 janela.config(menu=barra_menu)
 # Criar um menu "Arquivo" com duas opções
 menu_arquivo = tk.Menu(barra_menu, tearoff=0)
+scanning = tk.Menu(menu_arquivo, tearoff=1)
 barra_menu.add_cascade(label="Arquivo", menu=menu_arquivo)
+# menu_arquivo.add_cascade(label="Scan", menu_arquivo=scanning)
+# scanning.add_command(label="pingSwep", command=funcao3)
 menu_arquivo.add_command(label="Escolha a pasta ", command=funcao1)
 menu_arquivo.add_command(label="Função 2", command=funcao2)
 menu_arquivo.add_separator()
