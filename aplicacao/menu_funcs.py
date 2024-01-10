@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import PhotoImage
+import sys
+import os
+from tkinter.filedialog import askdirectory
 
 class MenuFuncs:
     def exibir_imagem(self):
@@ -22,6 +25,7 @@ class MenuFuncs:
         text_widget.insert(tk.END, mensagem + "\n")
 
     def sub_opcao1(self, text_widget):
+        
         mensagem = "Sub-opção 1 selecionada"
         text_widget.insert(tk.END, mensagem + "\n")
 
@@ -30,8 +34,14 @@ class MenuFuncs:
         text_widget.insert(tk.END, mensagem + "\n")
 
     def sub_submenu1(self, text_widget):
-        mensagem = "Sub-submenu 1 selecionado"
-        text_widget.insert(tk.END, mensagem + "\n")
+        origem = askdirectory(title="Pasta Origem")
+        print(origem)
+        arquivos=os.listdir(origem)
+        resultado = f" Os arquivos do diretório {origem} são:\n\n"
+        for i in arquivos:  # Lista Diretorio
+            resultado += f"{i} \n"
+        # mensagem = "Sub-submenu 1 selecionado"
+        text_widget.insert(tk.END, resultado + "\n")
 
     def sub_submenu2(self, text_widget):
         mensagem = "Sub-submenu 2 selecionado"
