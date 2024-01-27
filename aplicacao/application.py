@@ -41,7 +41,7 @@ class AplicacaoGUI:
 
         sub_sub_opcoes = [
             ("Sub-submenu 1", self.menu_funcs.sub_submenu1),
-            ("Sub-submenu 2", self.menu_funcs.sub_submenu2),
+            ("Organiza", self.menu_funcs.sub_submenu2),
             ("Sub-submenu 3", self.menu_funcs.sub_submenu3),
             ("Sub-submenu 4", self.menu_funcs.sub_submenu4),
         ]
