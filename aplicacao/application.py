@@ -6,7 +6,7 @@ class AplicacaoGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Vianna Produções")
-        self.root.geometry("400x200")
+        self.root.geometry("400x250")
         self.menu_funcs = MenuFuncs()
 
         self.criar_menu()
