@@ -5,7 +5,7 @@ from menu_funcs import MenuFuncs
 class AplicacaoGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Ferramentas SI")
+        self.root.title("Vianna Produções")
         self.root.geometry("800x300")
         self.menu_funcs = MenuFuncs()
 
@@ -20,8 +20,8 @@ class AplicacaoGUI:
         self.menu_principal = tk.Menu(self.root)
 
         opcoes = [
-            ("Opção 1", self.menu_funcs.opcao1),
-            ("Opção 2", self.menu_funcs.opcao2),
+            ("Arquivos", self.menu_funcs.opcao1),
+            ("Editar", self.menu_funcs.opcao2),
         ]
 
         for opcao, funcao in opcoes:
@@ -40,7 +40,7 @@ class AplicacaoGUI:
         sub_submenu = tk.Menu(self.submenu, tearoff=0)
 
         sub_sub_opcoes = [
-            ("Sub-submenu 1", self.menu_funcs.sub_submenu1),
+            ("Lista", self.menu_funcs.sub_submenu1),
             ("Organiza", self.menu_funcs.sub_submenu2),
             ("Sub-submenu 3", self.menu_funcs.sub_submenu3),
             ("Sub-submenu 4", self.menu_funcs.sub_submenu4),
@@ -49,7 +49,7 @@ class AplicacaoGUI:
         for sub_sub_opcao, funcao in sub_sub_opcoes:
             sub_submenu.add_command(label=sub_sub_opcao, command=lambda f=funcao: self.chamar_funcao(f))
 
-        self.submenu.add_cascade(label="Sub-submenu", menu=sub_submenu)
+        self.submenu.add_cascade(label="Automação", menu=sub_submenu)
 
         submenus_com_menu_interno = [
             ("Menu Interno 1", self.menu_funcs.submenu_com_menu_interno_1),
@@ -67,7 +67,7 @@ class AplicacaoGUI:
 
             self.submenu.add_cascade(label=submenu_interno, menu=submenu_com_menu_interno)
 
-        self.menu_principal.add_cascade(label="Submenu", menu=self.submenu)
+        self.menu_principal.add_cascade(label="Modulos", menu=self.submenu)
         self.root.config(menu=self.menu_principal)
 
     def criar_widgets(self):
