@@ -5,8 +5,8 @@ from menu_funcs import MenuFuncs
 class AplicacaoGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Exemplo de Submenus")
-
+        self.root.title("Ferramentas SI")
+        self.root.geometry("800x300")
         self.menu_funcs = MenuFuncs()
 
         self.criar_menu()

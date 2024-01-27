@@ -3,8 +3,12 @@ from tkinter import PhotoImage
 import sys
 import os
 from tkinter.filedialog import askdirectory
+from saudacao import MinhaClasse
 
 class MenuFuncs:
+    def __init__(self):
+        self.minha_instancia = MinhaClasse("Usuário")
+
     def exibir_imagem(self):
         janela_imagem = tk.Toplevel()
         janela_imagem.title("Imagem")
@@ -18,7 +22,14 @@ class MenuFuncs:
 
     def opcao1(self, text_widget):
         mensagem = "Opção 1 selecionada"
-        text_widget.insert(tk.END, mensagem + "\n")
+        self.minha_instancia.obter_nome_do_usuario()
+        novo_nome = self.minha_instancia.nome
+        resultado_modulo = self.minha_instancia.saudacao()
+        # minha_instancia = MinhaClasse("Usuário")
+        # resultado_modulo = minha_instancia.saudacao()
+        text_widget.insert(tk.END, f"Novo Nome: {novo_nome}\n")
+        text_widget.insert(tk.END, f"Resultado do módulo: {resultado_modulo}\n")
+        # text_widget.insert(tk.END, mensagem + "\n")
 
     def opcao2(self, text_widget):
         mensagem = "Opção 2 selecionada"
