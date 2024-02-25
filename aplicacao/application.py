@@ -11,6 +11,12 @@ class AplicacaoGUI:
 
         self.criar_menu()
         self.criar_widgets()
+    def chamar_encriptar(self):
+        self.menu_funcs.submenu_com_menu_interno_1(self.resultado_text)
+
+    def chamar_decriptar(self):
+        self.menu_funcs.submenu_com_menu_interno_2(self.resultado_text)
+
 
     def chamar_funcao(self, funcao):
         self.resultado_text.delete(1.0, tk.END)  # Limpa o conteúdo atual
