@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import filedialog
+from tkinter.filedialog import askdirectory
 from tkinter import PhotoImage
 from menu_funcs import MenuFuncs
 
@@ -11,6 +13,7 @@ class AplicacaoGUI:
 
         self.criar_menu()
         self.criar_widgets()
+
     def chamar_encriptar(self):
         self.menu_funcs.submenu_com_menu_interno_1(self.resultado_text)
 

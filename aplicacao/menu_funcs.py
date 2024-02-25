@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter.filedialog import askdirectory
 from tkinter import PhotoImage
 import sys
 import os
