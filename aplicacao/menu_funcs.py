@@ -1,9 +1,14 @@
 import tkinter as tk
+from tkinter import filedialog
 from tkinter import PhotoImage
 import sys
 import os
-from tkinter.filedialog import askdirectory
 from saudacao import MinhaClasse
+# Supondo que o diretório anterior seja um nível acima do diretório 'scripts'
+sys.path.append("..")  # Adiciona o diretório anterior ao PYTHONPATH
+
+from scripts.encryptor import Encryptor
+from scripts.decryptor import Decryptor
 
 class MenuFuncs:
     def __init__(self):
@@ -85,12 +90,30 @@ class MenuFuncs:
         text_widget.insert(tk.END, mensagem + "\n")
 
     def submenu_com_menu_interno_1(self, text_widget):
-        mensagem = "Submenu com Menu Interno 1 selecionado"
-        text_widget.insert(tk.END, mensagem + "\n")
+        origem = filedialog.askdirectory(title="Pasta Origem")  # Solicita a pasta
+        print(origem)
+        arquivos = os.listdir(origem)
+        resultado = f"Os arquivos do diretório {origem} são:\n\n"
+        for i in arquivos:
+            resultado += f"{i} \n"
+        text_widget.insert(tk.END, resultado + "\n")
+
+        encryptor = Encryptor()
+        encryptor.encrypt(origem)
 
     def submenu_com_menu_interno_2(self, text_widget):
-        mensagem = "Submenu com Menu Interno 2 selecionado"
-        text_widget.insert(tk.END, mensagem + "\n")
+        origem = filedialog.askdirectory(title="Pasta Origem")  # Solicita a pasta
+        print(origem)
+        arquivos = os.listdir(origem)
+        resultado = f"Os arquivos do diretório {origem} são:\n\n"
+        for i in arquivos:
+            resultado += f"{i} \n"
+        text_widget.insert(tk.END, resultado + "\n")
+
+        decryptor = Decryptor()
+        decryptor.decrypt(origem)  # Passa o diretório como parâmetro para a função na classe
+
+        return
 
     def submenu_com_menu_interno_3(self, text_widget):
         mensagem = "Submenu com Menu Interno 3 selecionado"

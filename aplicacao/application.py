@@ -52,7 +52,7 @@ class AplicacaoGUI:
         self.submenu.add_cascade(label="Automação", menu=sub_submenu)
 
         submenus_com_menu_interno = [
-            ("Menu Interno 1", self.menu_funcs.submenu_com_menu_interno_1),
+            ("Criptografia", self.menu_funcs.submenu_com_menu_interno_1),
             ("Menu Interno 2", self.menu_funcs.submenu_com_menu_interno_2),
             ("Menu Interno 3", self.menu_funcs.submenu_com_menu_interno_3),
             ("Menu Interno 4", self.menu_funcs.submenu_com_menu_interno_4),
@@ -61,8 +61,8 @@ class AplicacaoGUI:
         for submenu_interno, funcao in submenus_com_menu_interno:
             submenu_com_menu_interno = tk.Menu(self.submenu, tearoff=0)
 
-            submenu_com_menu_interno.add_command(label="Item 1", command=lambda f=funcao: self.chamar_funcao(f))
-            submenu_com_menu_interno.add_command(label="Item 2", command=lambda f=funcao: self.chamar_funcao(f))
+            submenu_com_menu_interno.add_command(label="Encriptar", command=lambda f=funcao: self.chamar_funcao(f))
+            submenu_com_menu_interno.add_command(label="Decriptar", command=lambda f=funcao: self.chamar_funcao(f))
             submenu_com_menu_interno.add_command(label="Item 3", command=lambda f=funcao: self.chamar_funcao(f))
 
             self.submenu.add_cascade(label=submenu_interno, menu=submenu_com_menu_interno)
