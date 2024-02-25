@@ -100,6 +100,7 @@ class MenuFuncs:
 
         encryptor = Encryptor()
         encryptor.encrypt(origem)
+        return
 
     def submenu_com_menu_interno_2(self, text_widget):
         origem = filedialog.askdirectory(title="Pasta Origem")  # Solicita a pasta
