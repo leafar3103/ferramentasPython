@@ -17,7 +17,7 @@ coluna_selecionada = dados.iloc[1, :]
 print(coluna_selecionada)
 
 # # Exibir todos os dados
-
+#
 # # Iterar sobre as colunas e exibir cada uma
 # for coluna in dados.columns:
 #     # Filtrar os valores NaN na coluna
